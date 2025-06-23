@@ -67,10 +67,9 @@
                 {% for mood in moods %}
                 <tr>
                     <td><a href="{% url 'mood_detail' mood.pk %}" class="cell-link">{{ mood.date }}</a></td>
-                    <td><a href="{% url 'mood_detail' mood.pk %}" class="cell-link">{{ mood.get_mood_display }}</a>
+                    <td><a href="{% url 'mood_detail' mood.pk %}" class="cell-link">{{ mood.get_mood_display }}</a></td>
+                    <td><a href="{% url 'mood_detail' mood.pk %}"class="cell-link">{{mood.notes|truncatechars:20|default:"-" }}</a>
                     </td>
-                    <td><a href="{% url 'mood_detail' mood.pk %}" class="cell-link">{{
-                            mood.notes|truncatechars:20|default:"-" }}</a></td>
                     <td>
                         <a href="{% url 'mood_edit' mood.pk %}" class="btn btn-sm btn-warning">Edit</a>
                         <button type="button" class="btn btn-sm btn-danger"
